@@ -9,9 +9,9 @@ This repo tracks all four belts in the Stellar Journey to Mastery challenge:
 - **Orange Belt (Level 3)** — basic caching layer, skeleton loading states, frontend test suite, demo video, complete documentation, live deploy.
 - **Green Belt (Level 4)** — second contract (`SupporterToken`, SEP-41), inter-contract `mint()` call from `TipJar` rewards every tipper with supporter tokens, GitHub Actions CI/CD pipeline, polished mobile-responsive layout.
 
-> **Live demo:** _add your Vercel/Netlify URL here once deployed_  
+> **Live demo:** https://tipjarforcreator.netlify.app/  
 > **Demo video (1 min):** _add your video link here once recorded_  
-> **CI status:** _replace `<owner>/<repo>` after pushing:_ `![CI](https://github.com/<owner>/<repo>/actions/workflows/ci.yml/badge.svg)`
+> **CI status:** ![CI](https://github.com/TranThong133/Tip-Jar-for-Creators/actions/workflows/ci.yml/badge.svg)
 
 ## Live deployment
 
@@ -236,59 +236,19 @@ Paste the new IDs into `frontend/.env` as `VITE_CONTRACT_ID=<TIPJAR_ID>` and `VI
 
 ## Screenshots
 
-### Level 1
-**Wallet connected with testnet balance displayed**
+### Live deploy
 
-![wallet connected and balance displayed](frontend/docs/wallet-connected.png)
+![Tip Jar live on Netlify](frontend/docs/live-deploy.png)
 
-**Successful testnet payment with hash + Stellar Expert link**
+### Inter-contract call
 
-![successful tip with transaction hash](frontend/docs/tx-success.png)
-
-L1 transaction on Stellar Expert:
-<https://stellar.expert/explorer/testnet/tx/23c5c7508d75e87c41fb583d7bd71c913438afc3882a1efe9d34ef1d4fc1b9d7>
-
-### Level 2
-
-**Multi-wallet contract call mid-flight** — frontend talking to the deployed `TipJar` via Soroban RPC; Freighter showing the contract-call confirmation (note the `0.0064043 XLM` Soroban resource fee, distinct from a plain payment fee), the live `Total received` / `Tip count` reads from the contract, and the multi-stage status card.
-
-![contract call in flight](frontend/docs/contract-call-success.png)
-
-**Real-time event feed** — `getEvents` polled every 5s renders the latest tips from the contract, each linked to its `tx ↗` on Stellar Expert.
-
-![live event feed](frontend/docs/event-feed.png)
-
-Verifiable contract-call transaction:
-<https://stellar.expert/explorer/testnet/tx/29d50d31f2bb4830b0620292e08ae9b90c908e0cc3d7af6c275560e06712f9d2>
-
-> **Tip:** L2 also accepts a screenshot of the StellarWalletsKit picker modal showing every supported wallet (Freighter, xBull, Albedo, LOBSTR, …). To capture it: hard-refresh the page, click **Connect Wallet**, and screenshot the modal before selecting one. Save as `frontend/docs/wallet-picker.png`.
-
-### Level 3
-
-**Test output (22 tests passing)**
-> Save the terminal output of `npm test` and `cargo test -p tip-jar` as `frontend/docs/tests-passing.png` and reference it here.
-
-![tests passing](frontend/docs/tests-passing.png)
-
-**Demo video (1 minute)**
-> Record a 1-minute walkthrough that hits the golden path: connect wallet → fund via Friendbot → enter recipient → send tip → watch the success card → see the tip appear in the live feed → click through to Stellar Expert. Upload to YouTube/Loom/Vimeo and paste the link in the _Live demo_ section at the top of this README.
-
-### Level 4
-
-**Mobile responsive view**
-> Open the live deploy on a phone (or use Chrome DevTools → Toggle device toolbar at ~375 px wide). Save as `frontend/docs/mobile-view.png`.
-
-![mobile responsive view](frontend/docs/mobile-view.png)
-
-**CI pipeline running (or badge)**
-> After pushing to GitHub, take a screenshot of the green Actions run on `.github/workflows/ci.yml`. Save as `frontend/docs/ci-passing.png`. The status badge near the top of this README will also update automatically once you replace `<owner>/<repo>` with your real repo path.
-
-![CI passing](frontend/docs/ci-passing.png)
-
-**Inter-contract call evidence**
-> Send a tip after deploy and capture the Stellar Expert page for that transaction — you should see TWO contract events on the same tx: one from `TipJar` (`tip` topic) and one from `SupporterToken` (`mint` topic). Save as `frontend/docs/inter-contract-call.png`.
+Two contract events on a single transaction — `TipJar.tip` + `SupporterToken.mint`:
 
 ![inter-contract mint event](frontend/docs/inter-contract-call.png)
+
+### Mobile responsive
+
+![mobile responsive view](frontend/docs/mobile-view.png)
 
 ## Roadmap
 
