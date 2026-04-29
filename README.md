@@ -10,7 +10,7 @@ This repo tracks all four belts in the Stellar Journey to Mastery challenge:
 - **Green Belt (Level 4)** — second contract (`SupporterToken`, SEP-41), inter-contract `mint()` call from `TipJar` rewards every tipper with supporter tokens, GitHub Actions CI/CD pipeline, polished mobile-responsive layout.
 
 > **Live demo:** https://tipjarforcreator.netlify.app/  
-> **Demo video (1 min):** _add your video link here once recorded_  
+> **Demo video (1 min):** https://drive.google.com/file/d/17V6l_CM6R3L3HbZofJGcZQxx0sjlL2xQ/view?usp=drive_link  
 > **CI status:** ![CI](https://github.com/TranThong133/Tip-Jar-for-Creators/actions/workflows/ci.yml/badge.svg)
 
 ## Live deployment
